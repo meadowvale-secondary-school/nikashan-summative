@@ -15,6 +15,7 @@
 		F22DCBB322709E2B003FE8AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F22DCBB122709E2B003FE8AC /* LaunchScreen.storyboard */; };
 		F22DCBBE22709E2B003FE8AC /* calculator_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22DCBBD22709E2B003FE8AC /* calculator_appTests.swift */; };
 		F22DCBC922709E2C003FE8AC /* calculator_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22DCBC822709E2C003FE8AC /* calculator_appUITests.swift */; };
+		F2DE6ED7228C7B88008374CE /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DE6ED6228C7B88008374CE /* RoundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F22DCBC422709E2B003FE8AC /* calculator appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "calculator appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22DCBC822709E2C003FE8AC /* calculator_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculator_appUITests.swift; sourceTree = "<group>"; };
 		F22DCBCA22709E2C003FE8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2DE6ED6228C7B88008374CE /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				F22DCBAF22709E2B003FE8AC /* Assets.xcassets */,
 				F22DCBB122709E2B003FE8AC /* LaunchScreen.storyboard */,
 				F22DCBB422709E2B003FE8AC /* Info.plist */,
+				F2DE6ED6228C7B88008374CE /* RoundButton.swift */,
 			);
 			path = "calculator app";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2DE6ED7228C7B88008374CE /* RoundButton.swift in Sources */,
 				F22DCBAB22709E29003FE8AC /* SecondViewController.swift in Sources */,
 				F22DCBA722709E29003FE8AC /* AppDelegate.swift in Sources */,
 				F22DCBA922709E29003FE8AC /* FirstViewController.swift in Sources */,
