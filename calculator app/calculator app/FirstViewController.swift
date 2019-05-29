@@ -20,8 +20,8 @@ class FirstViewController: UIViewController {
     
     @IBAction func numbers(_ sender: UIButton) {
         
-        numDisplay.text = String(numDisplay.text ?? "0") + String(sender.tag-1)
         privateNumDisplay = privateNumDisplay + String(Double(sender.tag)-1.0)
+        numDisplay.text = privateNumDisplay
         
     }
     
@@ -29,23 +29,18 @@ class FirstViewController: UIViewController {
         
         if numDisplay.text != "" {
             if sender.tag == 15 {
-                numDisplay.text = numDisplay.text! + "/"
                 privateNumDisplay = privateNumDisplay + "/"
             }
             else if sender.tag == 16 {
-                numDisplay.text = numDisplay.text! + "*"
                 privateNumDisplay = privateNumDisplay + "*"
             }
             else if sender.tag == 17 {
-                numDisplay.text = numDisplay.text! + "-"
                 privateNumDisplay = privateNumDisplay + "-"
             }
             else if sender.tag == 18 {
-                numDisplay.text = numDisplay.text! + "+"
                 privateNumDisplay = privateNumDisplay + "+"
             }
             else if sender.tag == 14 {
-                numDisplay.text = String(numDisplay.text!.dropLast())
                 privateNumDisplay = String(privateNumDisplay.dropLast())
             }
             else if sender.tag == 11 {
@@ -53,38 +48,37 @@ class FirstViewController: UIViewController {
                 ansDisplay.text = ""
                 privateNumDisplay = ""
             }
+            numDisplay.text = privateNumDisplay
         }
         
         if sender.tag == 12 {
-            numDisplay.text = numDisplay.text! + "("
             privateNumDisplay = privateNumDisplay + "("
+            numDisplay.text = privateNumDisplay
         }
         
         if sender.tag == 13 {
-            numDisplay.text = numDisplay.text! + ")"
             privateNumDisplay = privateNumDisplay + ")"
+            numDisplay.text = privateNumDisplay
         }
         
         if sender.tag == 19 {
-            numDisplay.text = numDisplay.text! + "."
             privateNumDisplay = privateNumDisplay + "."
+            numDisplay.text = privateNumDisplay
         }
         
-        if sender.tag == 20 {
-            let calculate = NSExpression(format: String(privateNumDisplay))
-            let value: Int = 0
-            
-            do {
-                let answer = try calculate.expressionValue(with: nil, context: nil) as? Double ?? 0
-                let formatter = NumberFormatter()
-                formatter.minimumFractionDigits = 0
-                formatter.maximumFractionDigits = 2
-                var value = try formatter.string(from: NSNumber(value: answer))
-            } catch {
-                var value = "Error"
-            }
         
-            ansDisplay.text = String(value)
+        if sender.tag == 20 {
+            let calculate = NSExpression(format: privateNumDisplay)
+            
+            let answer = calculate.expressionValue(with: nil, context: nil) as? Double
+            
+            let formatter = NumberFormatter()
+            formatter.minimumFractionDigits = 0
+            formatter.maximumFractionDigits = 2
+            
+            let value = formatter.string(from: NSNumber(value: answer!))
+
+            ansDisplay.text = value
         }
     }
     
